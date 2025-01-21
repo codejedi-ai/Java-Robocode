@@ -1,3 +1,4 @@
+code/index.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,47 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QR Code Generator</title>
     <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-        }
-        .container {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            margin-top: 2rem;
-        }
-        input {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 1rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        #qrcode {
-            text-align: center;
-            margin-top: 1rem;
-        }
-        button {
-            background: #007bff;
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 4px;
-            cursor: pointer;
-            margin-top: 1rem;
-        }
-        button:hover {
-            background: #0056b3;
-        }
-    </style>
+    <link rel="stylesheet" href="public/style.css">
 </head>
 <body>
     <div class="container">
@@ -54,32 +15,6 @@
         <div id="qrcode"></div>
         <button onclick="downloadQR()">Download QR Code</button>
     </div>
-    <script>
-        const qrDiv = document.getElementById('qrcode');
-        const textInput = document.getElementById('text');
-
-        function generateQR() {
-            qrDiv.innerHTML = '';
-            if (textInput.value) {
-                const qr = qrcode(0, 'L');
-                qr.addData(textInput.value);
-                qr.make();
-                qrDiv.innerHTML = qr.createImgTag(5);
-            }
-        }
-
-        function downloadQR() {
-            const img = qrDiv.querySelector('img');
-            if (img) {
-                const link = document.createElement('a');
-                link.download = 'qrcode.png';
-                link.href = img.src;
-                link.click();
-            }
-        }
-
-        textInput.addEventListener('input', generateQR);
-        generateQR(); // Initial generation
-    </script>
+    <script src="public/js/genqr.js"></script>
 </body>
 </html>

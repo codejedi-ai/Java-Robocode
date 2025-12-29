@@ -1,0 +1,28 @@
+{
+  "name": "galatea-ai-supabase",
+  "version": "1.0.0",
+  "description": "Shared Supabase backend for Galatea AI applications",
+  "private": true,
+  "scripts": {
+    "start": "supabase start",
+    "stop": "supabase stop",
+    "status": "supabase status",
+    "reset": "supabase db reset",
+    "migrate": "supabase db push",
+    "logs": "supabase logs",
+    "studio": "open http://127.0.0.1:54323",
+    "types:generate": "supabase gen types typescript --local",
+    "functions:serve": "supabase functions serve --no-verify-jwt",
+    "functions:deploy": "supabase functions deploy --no-verify-jwt",
+    "functions:deploy:all": "supabase functions deploy --no-verify-jwt --all"
+  },
+  "keywords": [
+    "supabase",
+    "backend",
+    "database",
+    "galatea-ai"
+  ],
+  "author": "",
+  "license": "MIT"
+}
+

@@ -1,8 +1,0 @@
-node_modules/
-migrations/
-.env
-.env.local
-.DS_Store
-*.log
-supabase-config.yaml
-config.md
